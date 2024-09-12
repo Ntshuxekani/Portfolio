@@ -1,20 +1,43 @@
-import React from 'react';
+import React, { useState } from 'react';
+import profilePic from './ntshu.jpg';
 import './App.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
 function App() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
   return (
     <div className="portfolio-container">
       {/* Navbar */}
       <nav className="navbar">
-        {/* Your responsive and styled navbar here */}
+        <div className="hamburger" onClick={toggleMenu}>
+          <i className="fas fa-bars"></i>
+        </div>
+        <ul className={`nav-links ${menuOpen ? 'open' : ''}`}>
+          <li><a href="#about-me">About Me</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#contact-info">Contact</a></li>
+        </ul>
       </nav>
 
       {/* Header Section */}
       <header className="header">
         <h1>Ntshuxekani Zitha</h1>
-        <img src="ntshu.jpg" alt="Ntshuxekani Zitha" className="profile-photo" />
+        <img src={profilePic} alt="Ntshuxekani Zitha" className="profile-photo" />
+
         <p>Full Stack Developer</p>
+
+         {/* Download CV Button */}
+         <a href={`${process.env.PUBLIC_URL}/cv.pdf`} download className="download-cv-button">
+          <button>Download CV</button>
+        </a>
       </header>
 
       {/* About Me Section */}
@@ -38,12 +61,13 @@ function App() {
       <section id="projects" className="projects">
         <h2>Projects</h2>
         <div className="project">
-          <h3>Photographer Showcase and Booking App</h3>
-          <p>A web application that allows photographers to showcase their work and get booked by clients.</p>
+          <h3>ProcessPulse</h3>
+          <p>ProcessPulse is a platform that allows Organizations to post their business processes, then hunters 
+            comes to the platform to look for business process that organization posts and evaluate them.</p>
         </div>
         <div className="project">
-          <h3>Office Booking Application</h3>
-          <p>An app where employees can book office spaces to optimize workplace usage.</p>
+          <h3>Photography Booking Application</h3>
+          <p>An app where photographers showcase their work and get booked.</p>
         </div>
       </section>
 
@@ -60,10 +84,10 @@ function App() {
       </section>
 
       {/* Contact Section */}
-      <footer className="contact-info">
+      <footer id="contact-info" className="contact-info">
         <h2>Contact</h2>
-        <p>Email: example@example.com</p>
-        <p>Phone: +27 123 456 7890</p>
+        <p>Email: ntshuxekanizitha@gmail.com</p>
+        <p>Phone: +27 76 916 8770</p>
         <p>
           <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">
             <i className="fab fa-github"></i> GitHub

@@ -122,5 +122,11 @@ footer p {
   .projects p {
     font-size: 0.9rem;
   }
+  .profile-photo {
+    width: 150px; /* Adjust the width as needed */
+    height: auto;  /* This will maintain the aspect ratio */
+    border-radius: 50%; /* Optional: makes the image circular */
+  }
+  
 }
 

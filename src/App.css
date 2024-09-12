@@ -1,127 +1,233 @@
-/* Base styling for the Navbar */
-.navbar {
-  background-color: #282c34;
-  padding: 1rem;
-  text-align: center;
-  position: relative;
-}
-
-.navbar ul {
-  list-style-type: none;
+/* General Styling */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #1b1f2e;  /* Dark Blue */
+  color: #f5f5f7;  /* Light Gray */
   margin: 0;
   padding: 0;
+  line-height: 1.6;
+}
+
+/* Portfolio Container */
+.portfolio-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Header Styling */
+.header {
+  text-align: center;
+  padding: 50px 20px;
+  background-color: #252a41;  /* Slate Blue */
+  color: #4ecdc4;  /* Vibrant Coral */
+  border-bottom: 3px solid #4ecdc4; /* Aqua accent */
+}
+
+.header h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.header p {
+  font-size: 1.4rem;
+  font-weight: 300;
+}
+
+.profile-photo {
+  width: 180px;
+  height: auto;
+  border-radius: 50%;
+  border: 5px solid #4ecdc4;  /* Aqua */
+  margin: 20px 0;
+}
+
+/* Download CV Button */
+.download-cv-button button {
+  background-color: #4ecdc4;  /* Vibrant Coral */
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.download-cv-button button:hover {
+  background-color: #4ecdc4;  /* Aqua Hover */
+}
+
+/* Navbar styles */
+.navbar {
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #252a41;  /* Slate Blue */
+  padding: 10px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
-.navbar li {
-  margin: 0 10px;
+.nav-links {
+  display: flex;
+  list-style-type: none;
 }
 
-.navbar a {
-  color: #61dafb;
+.nav-links li {
+  margin-right: 20px;
+}
+
+.nav-links a {
   text-decoration: none;
-  font-weight: bold;
-  font-size: 1rem;
+  color: #f5f5f7;  /* Light Gray */
+}
+
+.nav-links a:hover {
+  color: #4ecdc4;  /* Vibrant Coral Hover */
 }
 
 /* Hamburger Icon */
 .hamburger {
   display: none;
   cursor: pointer;
-  flex-direction: column;
-  justify-content: space-around;
-  height: 25px;
 }
 
-.bar {
-  width: 30px;
-  height: 3px;
-  background-color: #61dafb;
-  margin: 3px 0;
-  transition: all 0.3s ease;
+.hamburger i {
+  font-size: 24px;
+  color: #4ecdc4;  /* Vibrant Coral */
 }
 
-/* Responsive Navbar for mobile screens */
-@media screen and (max-width: 768px) {
-  .navbar ul {
+/* Section Styling */
+section {
+  padding: 40px 20px;
+  margin: 20px 0;
+  background-color: #252a41;  /* Slate Blue */
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+section h2 {
+  color: #4ecdc4;  /* Aqua */
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+
+section p, section ul {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+section ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+section ul li {
+  margin-bottom: 10px;
+}
+
+section ul li::before {
+  content: "•";
+  color: #4ecdc4;  /* Vibrant Coral */
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+/* Project Section */
+.projects .project {
+  background-color: #1b1f2e;  /* Dark Blue */
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  border: 1px solid #4ecdc4;  /* Aqua */
+}
+
+.projects h3 {
+  color: #4ecdc4;  /* Aqua */
+  margin-bottom: 10px;
+}
+
+.projects p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* Footer Styling */
+footer {
+  background-color: #252a41;  /* Slate Blue */
+  color: #f5f5f7;
+  padding: 20px;
+  text-align: center;
+}
+
+footer p {
+  margin: 5px 0;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .header h1 {
+    font-size: 2rem;
+  }
+
+  section h2 {
+    font-size: 1.5rem;
+  }
+
+  section p, section ul {
+    font-size: 1rem;
+  }
+
+  .projects h3 {
+    font-size: 1.2rem;
+  }
+
+  .projects p {
+    font-size: 0.9rem;
+  }
+
+  .profile-photo {
+    width: 120px;
+    height: auto;
+  }
+
+  .download-cv-button button {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+
+  .nav-links {
     flex-direction: column;
-    align-items: center;
     position: absolute;
-    top: 50px;
-    left: 0;
+    top: 60px;
     right: 0;
-    background-color: #282c34;
+    background-color: #252a41;
+    width: 100%;
+    height: auto;
     display: none;
   }
 
-  .navbar ul.open {
-    display: flex; /* Show menu when open */
+  .nav-links.open {
+    display: flex;
   }
 
-  .navbar li {
+  .nav-links li {
     margin: 10px 0;
   }
 
   .hamburger {
-    display: flex;
-    position: absolute;
-    right: 20px;
-    top: 20px;
+    display: block;
   }
 }
 
-/* Animation for Hamburger Menu */
-.hamburger.active .bar:nth-child(1) {
-  transform: rotate(-45deg) translate(-5px, 6px);
-}
-
-.hamburger.active .bar:nth-child(2) {
-  opacity: 0;
-}
-
-.hamburger.active .bar:nth-child(3) {
-  transform: rotate(45deg) translate(-5px, -6px);
-}
-
-/* For very small screens like mobile devices */
-@media screen and (max-width: 480px) {
-  .navbar ul {
-    top: 40px;
-  }
-
-  .navbar a {
-    font-size: 1rem;
-  }
-
-  .navbar li {
-    margin: 8px 0;
+/* Desktop view */
+@media (min-width: 769px) {
+  .download-cv-button button {
+    font-size: 18px;
   }
 }
-/* Header Styling */
-.header {
-  text-align: center;
-  padding: 50px 20px;
-  background-color: #282c34;
-  color: #61dafb;
-}
-
-.header h1 {
-  font-size: 2.5rem;
-  margin-bottom: 10px;
-}
-
-.header p {
-  font-size: 1.2rem;
-  font-weight: 300;
-}
-
-.header .profile-photo {
-  width: 150px; /* Adjust size as needed */
-  height: auto;
-  border-radius: 50%; /* Makes the image circular */
-  margin-top: 20px; /* Space between text and image */
-  border: 3px solid #61dafb; /* Border color */
-}
-
